@@ -28,6 +28,9 @@ Set-Service -Name BTAGService -StartupType Disabled
 ### Misc
 ```powershell
 $Env:PSModulePath -split (';')
+
+(Get-Command kopia).Path
+C:\bin\kopia.exe
 ```
 
 ```powershell
