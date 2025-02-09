@@ -28,6 +28,14 @@ Set-Service -Name BTAGService -StartupType Disabled
 ### Misc
 ```powershell
 $Env:PSModulePath -split (';')
+Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
+Get-ChildItem | Get-Member | ConvertTo-CSV -Delimiter `t | Set-Clipboard
+Man get-process -showWindow
+Get-process | Tee-object meow.csv
+
+Get-Process |? ProcessName -EQ "chrome" |% Id
+# ? short for Where-Object
+# % short for ForEach-Object / Select-Object
 
 (Get-Command kopia).Path
 C:\bin\kopia.exe
